@@ -46,14 +46,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CheckOutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CheckOutForm.Designer.cs">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomParameter.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="GuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestForm.Designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RentingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentingForm.Designer.cs">
+      <DependentUpon>RentingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiecsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiecsForm.Designer.cs">
+      <DependentUpon>ServiecsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliesForm.Designer.cs">
+      <DependentUpon>SuppliesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForm.Designer.cs">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestForm.resx">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +118,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RentingForm.resx">
+      <DependentUpon>RentingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForm.resx">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiecsForm.resx">
+      <DependentUpon>ServiecsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliesForm.resx">
+      <DependentUpon>SuppliesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +144,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\living-room %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24-hours-support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debit-card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
