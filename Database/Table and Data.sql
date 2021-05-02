@@ -167,3 +167,66 @@ INSERT INTO HOADON_DICHVU(MaHD, MaDV, SoLanSuDungDichVu) VALUES
 	('HD0008', 'DV0001', 2 ),
 	('HD0009', 'DV0004', 4 ),
 	('HD0010', 'DV0003', 3 )
+
+
+
+create sequence RoomSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+create proc InsertPhong @tenPhong varchar(10), @loaiPhong nvarchar(50), @giaThue1Ngay int
+as
+begin
+	insert into PHONG(MaPhong,TenPhong,LoaiPhong,GiaThue1Ngay)
+	values('PH' + cast(next value for RoomSeq as nvarchar(10)),@tenPhong,@loaiPhong,@giaThue1Ngay)
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+go
+create proc SelectPhongByID @maPhong char(6)
+as
+begin
+	select * from PHONG
+	where MaPhong = @maPhong
+end
+go
+create proc SelectPhongByName @tenPhong varchar(10)
+as
+begin
+	select * from PHONG
+	where TenPhong = @tenPhong
+end
+go
+create proc SelectPhongByCategory @loaiPhong nvarchar(50)
+as
+begin
+	select * from PHONG
+	where LoaiPhong = @loaiPhong
+end
+go
+create proc SelectPhongByPrice @giaPhong1Ngay int
+as
+begin
+	select * from PHONG
+	where GiaThue1Ngay = @giaPhong1Ngay
+end
+go
+
+create proc SelectAllPhong
+as
+begin
+	select * from PHONG
+end
+go
+create proc UpdatePhong @maPhong char(6),@tenPhong varchar(10), @loaiPhong nvarchar(50), @giaThue1Ngay int
+as
+begin
+	update PHONG
+	set TenPhong = @tenPhong,
+	LoaiPhong = @loaiPhong,
+	GiaThue1Ngay = @giaThue1Ngay
+	where MaPhong = @maPhong
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end

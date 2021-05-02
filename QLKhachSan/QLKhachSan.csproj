@@ -72,6 +72,18 @@
     <Compile Include="RentingForm.Designer.cs">
       <DependentUpon>RentingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomSubForm\AddRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSubForm\AddRoomForm.Designer.cs">
+      <DependentUpon>AddRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSubForm\SearchRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSubForm\SearchRoomForm.Designer.cs">
+      <DependentUpon>SearchRoomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiecsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSubForm\AddRoomForm.resx">
+      <DependentUpon>AddRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSubForm\SearchRoomForm.resx">
+      <DependentUpon>SearchRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiecsForm.resx">
       <DependentUpon>ServiecsForm.cs</DependentUpon>

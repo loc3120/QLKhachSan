@@ -48,43 +48,51 @@ namespace QLKhachSan
             this.roomDgv.RowTemplate.Height = 24;
             this.roomDgv.Size = new System.Drawing.Size(1196, 402);
             this.roomDgv.TabIndex = 0;
+            this.roomDgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomDgv_CellDoubleClick);
             // 
             // cbSearch
             // 
-            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(80, 45);
+            this.cbSearch.Items.AddRange(new object[] {
+            "Mã Phòng",
+            "Tên Phòng",
+            "Loại Phòng",
+            "Giá Thuê 1 Ngày"});
+            this.cbSearch.Location = new System.Drawing.Point(59, 45);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(121, 34);
+            this.cbSearch.Size = new System.Drawing.Size(169, 33);
             this.cbSearch.TabIndex = 18;
             // 
             // txbSearch
             // 
-            this.txbSearch.Location = new System.Drawing.Point(304, 43);
-            this.txbSearch.Multiline = true;
+            this.txbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearch.Location = new System.Drawing.Point(310, 45);
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(350, 38);
+            this.txbSearch.Size = new System.Drawing.Size(355, 30);
             this.txbSearch.TabIndex = 17;
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(786, 44);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(786, 36);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(129, 39);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(978, 43);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(981, 37);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 41);
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // RoomForm
             // 
