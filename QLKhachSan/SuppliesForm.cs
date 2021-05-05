@@ -19,12 +19,42 @@ namespace QLKhachSan
 
         private void SuppliesForm_Load(object sender, EventArgs e)
         {
-            suppliesDgv.DataSource = new Database().SelectData("select * from VATDUNG");
+            reload();
         }
 
         private void reload()
         {
             suppliesDgv.DataSource = new Database().SelectData("select * from VATDUNG");
+            updateHoaDonVatDung();
+        }
+
+        private void updateHoaDonVatDung()
+        {
+            Database db = new Database();
+            string sql = "";
+            DataTable listVatDung = db.SelectData("select * from VATDUNG");
+            for (int i = 0; i < listVatDung.Rows.Count; i++)
+            {
+                List<CustomParameter> lstPara = new List<CustomParameter>();
+                sql = "UpdateHoaDonVatDung";
+                lstPara.Add(new CustomParameter()
+                {
+                    key = "@maVatDung",
+                    value = listVatDung.Rows[i][0].ToString()
+                });
+                lstPara.Add(new CustomParameter()
+                {
+                    key = "@giaTien",
+                    value = listVatDung.Rows[i][2].ToString()
+                });
+
+                var rs = new Database().ExeCute(sql, lstPara);
+                //if (rs != 1)
+                //{
+                //    MessageBox.Show("Something went wrong");
+                //}
+
+            }
         }
 
         private void resetValue()

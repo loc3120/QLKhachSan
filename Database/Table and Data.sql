@@ -293,3 +293,18 @@ begin
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+
+go
+create procedure UpdateHoaDonVatDung
+	@maVatDung char(10),
+	@giaTien int
+as 
+begin
+	update HOADON_VATDUNG
+	set 		
+		TongTienSuDungVatDung = @giaTien * SoLuong
+	where MaVatDung = @maVatDung;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
