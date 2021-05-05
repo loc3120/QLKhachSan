@@ -11,7 +11,7 @@ namespace QLKhachSan
 {
     public class Database
     {
-        private string connectionString = "Data Source=KIENNEIK\\SQLEXPRESS01;Initial Catalog=QLKhachSan;Trusted_Connection=Yes;";
+        private string connectionString = "Data Source=DESKTOP-68O7DLF;Initial Catalog=QLKhachSan;Trusted_Connection=Yes;";
         private SqlConnection conn;
 
         //private string sql;
@@ -113,6 +113,26 @@ namespace QLKhachSan
             catch (Exception)
             {
                 check = false;
+            }
+            return check;
+        }
+
+        public bool del_Supplies(string maVatDung)
+        {
+            bool check = false;
+            try
+            {
+                conn.Open();
+                string sql1 = "DELETE From VATDUNG where MaVatDung = '" + maVatDung + "'";
+                SqlCommand cmd1 = new SqlCommand(sql1, conn);
+                cmd1.ExecuteNonQuery();
+                check = true;
+                conn.Close();
+            }
+            catch
+            {
+                check = false;
+                throw;
             }
             return check;
         }

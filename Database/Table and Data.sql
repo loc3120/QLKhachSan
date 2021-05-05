@@ -230,3 +230,66 @@ begin
 	if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+
+--search vat dung ---
+-- ma vat dung--
+go
+create procedure searchMaVatDung @Ma char(10)
+as 
+begin
+	select MaVatDung, TenVatDung, GiaTienSuDung, MaPhong
+	from VATDUNG
+	where MaVatDung = @Ma
+end
+-- ten vat dung--
+go
+create procedure searchTenVatDung @TenVatDung nvarchar(100)
+as 
+begin
+	select MaVatDung, TenVatDung, GiaTienSuDung, MaPhong
+	from VATDUNG
+	where TenVatDung = @TenVatDung
+end
+-- ma phong--
+go
+create procedure searchMaPhong @Ma char(10)
+as 
+begin
+	select MaVatDung, TenVatDung, GiaTienSuDung, MaPhong
+	from VATDUNG
+	where MaPhong = @Ma
+end
+
+-- them sua vat dung--
+go
+create sequence VatDungSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+create proc InsertVatDung @tenVatDung char(10), @giaTien int, @maPhong char(10)
+as
+begin
+	insert into VATDUNG(MaVatDung,TenVatDung,GiaTienSuDung,MaPhong)
+	values('VD' + cast(next value for VatDungSeq as char(10)),@tenVatDung,@giaTien,@maPhong)
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+go
+create procedure UpdateVatDung
+	@maVatDung char(10),
+	@tenVatDung nvarchar(50),
+	@giaTien int,
+	@maPhong char(10)
+as 
+begin
+	update VATDUNG
+	set 		
+		TenVatDung = @tenVatDung,
+		GiaTienSuDung = @giaTien,
+		MaPhong = @maPhong
+	where MaVatDung = @maVatDung;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
