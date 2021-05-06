@@ -308,3 +308,178 @@ begin
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+
+----------------------------------------------------------------------
+---KHACHHANG---
+
+create sequence GuestSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+
+-----------------------------
+create proc InsertKhach @tenKH nvarchar(50), @NS date, @GT nvarchar(5)
+as
+begin
+	insert into KHACHHANG(MaKH, HoTen, NgaySinh, GioiTinh)
+	values('KH' + cast(next value for GuestSeq as nvarchar(10)),@tenKH,@NS,@GT);
+
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+----------------------------
+create proc SelectKHByID @maKH char(6)
+as
+begin
+	select * from KHACHHANG
+	where MaKH = @maKH
+end
+----------------------------
+create proc SelectKHByName @tenKH nvarchar(50)
+as
+begin
+	select * from KHACHHANG
+	where HoTen = @tenKH
+end
+----------------------------
+create proc SelectAllKHACHHANG
+as
+begin
+	select * from KHACHHANG
+end
+go
+----------------------------
+create proc UpdateKHACHHANG @maKH char(6),@tenKH nvarchar(50), @NS date, @gt nvarchar(5)
+as
+begin
+	update KHACHHANG
+	set HoTen = @tenKH,
+	NgaySinh = @NS,
+	GioiTinh = @gt
+	where MaKH = @maKH
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+----------------------------
+---tim kiem---
+---MaKH
+create procedure searchMaKH @MaKH char(6)
+as 
+begin
+	select MaKH, HoTen, NgaySinh, GioiTinh
+	from KHACHHANG
+	where MaKH = @MaKH
+end
+
+---TenKH
+create procedure searchTenKH @TenKH nvarchar(50)
+as 
+begin
+	select MaKH, HoTen, NgaySinh, GioiTinh
+	from KHACHHANG
+	where HoTen = @TenKH
+end
+-----------------------------------
+--select * from THUE
+--select * from KHACHHANG
+--select * from PHONG
+
+--select KHACHHANG.MaKH from KHACHHANG 
+--inner join THUE on THUE.MaKH = KHACHHANG.MaKH
+--where THUE.NgayDi is null
+--union
+--select KHACHHANG.MaKH from KHACHHANG
+--EXCEPT
+--(select KHACHHANG.MaKH from KHACHHANG 
+--inner join THUE on THUE.MaKH = KHACHHANG.MaKH
+--where THUE.NgayDi is null)
+
+--select KHACHHANG.MaKH from KHACHHANG 
+--	inner join THUE on THUE.MaKH = KHACHHANG.MaKH
+--	where THUE.NgayDen is null or THUE.NgayDi is not null
+--	union
+--	(select KHACHHANG.MaKH from KHACHHANG
+--	EXCEPT
+--	select THUE.MaKH from THUE)
+-----------------------------------
+create proc InsertTHUE @MaKH char(6), @MaPhong char(6), @NgayDen date
+as
+begin
+	insert into THUE(MaDK , MaKH, MaPhong, NgayDen)
+	values('TU' + cast(next value for GuestSeq as char(6)),@MaKH,@MaPhong,@NgayDen);
+
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+exec InsertTHUE 'KH1000','PH1000','2021-02-02'
+-----------------------------------
+create proc UpdateTHUE @maThue char(6),@MaKH char(6), @MaPhong char(6), @NgayDen date
+as
+begin
+	update THUE
+	set MaKH = @MaKH,
+	MaPhong = @MaPhong,
+	NgayDen = @NgayDen
+	where MaDK = @maThue
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+-----------------------------------
+create proc selectMaKHforRent
+as
+begin
+	select KHACHHANG.MaKH from KHACHHANG
+	EXCEPT
+	(select KHACHHANG.MaKH from KHACHHANG 
+	inner join THUE on THUE.MaKH = KHACHHANG.MaKH
+	where THUE.NgayDi is null)
+
+end
+go
+
+exec selectMaKHforRent
+-------------------------------------
+create proc selectThuebyID @maDK char(6)
+as
+begin
+	select * from THUE
+	where THUE.MaDK = @maDK
+end
+
+exec selectThuebyID 'DK0001'
+---------------------------------------
+
+create proc selectMaPHforRent
+as
+begin
+	select PHONG.MaPhong from PHONG
+	EXCEPT
+	(select PHONG.MaPhong from PHONG
+	inner join THUE on THUE.MaPhong = PHONG.MaPhong
+	where THUE.NgayDi is null)
+
+end
+go
+
+exec selectMaPHforRent
+------------------------------------
+---tim kiem---
+---MaKH
+create procedure searchMaKHforRent @MaKH char(6)
+as 
+begin
+	select *
+	from THUE
+	where MaKH = @MaKH
+end
+
+---TenKH
+create procedure searchMaPHONGforRent @MaPH char(6)
+as 
+begin
+	select *
+	from THUE
+	where MaPhong = @MaPH
+end

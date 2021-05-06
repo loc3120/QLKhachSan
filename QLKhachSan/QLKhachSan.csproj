@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGuest.Designer.cs">
+      <DependentUpon>AddGuest.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckOutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,18 @@
     <Compile Include="RentingForm.Designer.cs">
       <DependentUpon>RentingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RentRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentRoom.Designer.cs">
+      <DependentUpon>RentRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnRoom.Designer.cs">
+      <DependentUpon>ReturnRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomSubForm\AddRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,12 @@
     </Compile>
     <Compile Include="RoomSubForm\SearchRoomForm.Designer.cs">
       <DependentUpon>SearchRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchGuest.Designer.cs">
+      <DependentUpon>SearchGuest.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiecsForm.cs">
       <SubType>Form</SubType>
@@ -122,6 +146,9 @@
     <Compile Include="ThemVatDung.Designer.cs">
       <DependentUpon>ThemVatDung.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddGuest.resx">
+      <DependentUpon>AddGuest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckOutForm.resx">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +177,12 @@
     <EmbeddedResource Include="RentingForm.resx">
       <DependentUpon>RentingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RentRoom.resx">
+      <DependentUpon>RentRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnRoom.resx">
+      <DependentUpon>ReturnRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomSubForm\SearchRoomForm.resx">
       <DependentUpon>SearchRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGuest.resx">
+      <DependentUpon>SearchGuest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiecsForm.resx">
       <DependentUpon>ServiecsForm.cs</DependentUpon>
