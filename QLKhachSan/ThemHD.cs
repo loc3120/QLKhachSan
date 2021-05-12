@@ -52,11 +52,11 @@ namespace QLKhachSan
             cbbDichVu.DisplayMember = "TenDV";
             cbbDichVu.ValueMember = "TenDV";
 
-            string getAllVD = "SELECT TenVatDung FROM VATDUNG";
-            DataTable tenVDTable = csdl.SelectData(getAllVD);
-            cbbVatDung.DataSource = tenVDTable.Copy();
-            cbbVatDung.DisplayMember = "Tenvatdung";
-            cbbVatDung.ValueMember = "Tenvatdung";
+            //string getAllVD = "SELECT TenVatDung FROM VATDUNG";
+            //DataTable tenVDTable = csdl.SelectData(getAllVD);
+            //cbbVatDung.DataSource = tenVDTable.Copy();
+            //cbbVatDung.DisplayMember = "Tenvatdung";
+            //cbbVatDung.ValueMember = "Tenvatdung";
 
             if (string.IsNullOrEmpty(maHoaDon))
             {
@@ -99,7 +99,6 @@ namespace QLKhachSan
             int slvd = Int32.Parse(nudSL2.Value.ToString());
 
             var tmp = db.SelectData("select dbo.tien ('" + txtMaKH + "','" + txtMaPhong + "','" + maHoaDon + "')");
-            textBox1.Text= tmp.Rows[0].ItemArray[0].ToString();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -123,7 +122,7 @@ namespace QLKhachSan
             else
             {
                 string sqledit = "exec testedit '" + maHoaDon + "','" + txtMaKH + "','" + txtMaPhong + "',N'" + txtTenDV + "',N'" + txtTenVD + "'," + slvd.ToString() + "," + sldv.ToString() + "";
-                textBox1.Text = sqledit;
+                //textBox1.Text = sqledit;
                 db.SelectData(sqledit);
                 MessageBox.Show("Cập nhật thành công");
             }
@@ -164,6 +163,16 @@ namespace QLKhachSan
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbbMaPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var csdl = new Database();
+            string getAllMaPhong = "SELECT DISTINCT TenVatDung FROM PHONG p , VATDUNG v WHERE v.maPhong = '" + cbbMaPhong.Text + "'";
+            DataTable maPhongTable = csdl.SelectData(getAllMaPhong);
+            cbbVatDung.DataSource = maPhongTable.Copy();
+            cbbVatDung.DisplayMember = "TenVatDung";
+            cbbVatDung.ValueMember = "TenVatDung";
         }
     }
 }

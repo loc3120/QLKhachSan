@@ -43,8 +43,6 @@ namespace QLKhachSan
             this.label4 = new System.Windows.Forms.Label();
             this.nudSL2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudSL1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSL2)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +66,7 @@ namespace QLKhachSan
             this.cbbMaPhong.Name = "cbbMaPhong";
             this.cbbMaPhong.Size = new System.Drawing.Size(235, 28);
             this.cbbMaPhong.TabIndex = 13;
+            this.cbbMaPhong.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhong_SelectedIndexChanged);
             // 
             // btnLuu
             // 
@@ -204,32 +203,11 @@ namespace QLKhachSan
             this.label6.TabIndex = 24;
             this.label6.Text = "Số lượng";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(240, 309);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 47);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Thành tiền";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(419, 323);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 26);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // ThemHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 538);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.nudSL2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.nudSL1);
@@ -270,7 +248,5 @@ namespace QLKhachSan
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudSL2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

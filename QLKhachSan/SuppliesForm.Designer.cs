@@ -45,7 +45,7 @@ namespace QLKhachSan
             this.suppliesDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.suppliesDgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.suppliesDgv.Location = new System.Drawing.Point(0, 113);
-            this.suppliesDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suppliesDgv.Margin = new System.Windows.Forms.Padding(2);
             this.suppliesDgv.Name = "suppliesDgv";
             this.suppliesDgv.RowHeadersWidth = 51;
             this.suppliesDgv.RowTemplate.Height = 24;
@@ -56,7 +56,7 @@ namespace QLKhachSan
             // txbSearch
             // 
             this.txbSearch.Location = new System.Drawing.Point(182, 28);
-            this.txbSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txbSearch.Multiline = true;
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(209, 32);
@@ -68,7 +68,7 @@ namespace QLKhachSan
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(763, 28);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(97, 32);
             this.btnExit.TabIndex = 17;
@@ -79,7 +79,7 @@ namespace QLKhachSan
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(413, 28);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(97, 32);
             this.btnSearch.TabIndex = 16;
@@ -91,7 +91,7 @@ namespace QLKhachSan
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(662, 28);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 32);
             this.btnDelete.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace QLKhachSan
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(557, 27);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(64, 33);
             this.btnAdd.TabIndex = 14;
@@ -120,7 +120,7 @@ namespace QLKhachSan
             "Tên vật dụng",
             "Mã phòng"});
             this.cbSearch.Location = new System.Drawing.Point(11, 30);
-            this.cbSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(2);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(148, 28);
             this.cbSearch.TabIndex = 20;
@@ -137,7 +137,7 @@ namespace QLKhachSan
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SuppliesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuppliesForm";

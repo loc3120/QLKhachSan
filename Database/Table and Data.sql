@@ -542,7 +542,7 @@ select dbo.tienKH_phong ('KH0002','PH0001')
 
 go
 
-alter function tien (@makh char(6),@maphong nvarchar(50),@mahd nvarchar(10)) 
+create function tien (@makh char(6),@maphong nvarchar(50),@mahd nvarchar(10)) 
 returns int
 as
 begin
@@ -568,7 +568,7 @@ go
 
  go
  
-alter proc test @maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
+create proc test @maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
 as
 begin
 
@@ -579,16 +579,15 @@ begin
 	values(@temp,0,@maKH,@maPhong);
 
 	declare @tmpvd nvarchar(50)
-	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung)
+	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung AND MaPhong = @maPhong)
 
 	insert into HOADON_VATDUNG(MaHD, MaVatDung, SoLuong)
 	values (@temp,@tmpvd,@slvd)
 	declare @vd int
-	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung)
+	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung AND MaPhong = @maPhong)
 	update HOADON_VATDUNG
 	set TongTienSuDungVatDung=SoLuong*@vd
 	where MaHD = @temp
-
 
 	declare @tmpdv nvarchar(50)
 	set @tmpdv = (select distinct MaDV from DICHVU where TenDV=@madv)
@@ -601,12 +600,8 @@ begin
 	set TongTienSuDungDichVu=SoLanSuDungDichVu*@dv
 	where MaHD = @temp
 
-
 	update HOADON
 	set TongTien = (select dbo.tien (@maKH,@maPhong,@temp)) where MaHD=@temp
-
-	print @dv
-	print @temp
 
 
 	if @@ROWCOUNT > 0 begin return 1 end
@@ -620,12 +615,11 @@ exec test 'KH0003','PH0003',N'Đưa đón',N'Cô ca',3,3
 SELECT hdvd.SoLuong FROM vatdung vd, hoadon_vatdung hdvd  where hdvd.mavatdung=vd.mavatdung and hdvd.mahd='HD1028' and vd.maphong = 'PH0002'
 
 go
-
 -----
 
 ----
  go
-alter proc testedit @mahd nvarchar(20),@maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
+create proc testedit @mahd nvarchar(20),@maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
 as
 begin
 
@@ -685,3 +679,5 @@ begin
 end
 
 exec searchHD 'H'
+
+
