@@ -27,7 +27,7 @@ namespace QLKhachSan
             sql += "WHERE 1 = 1 ";
             if (!string.IsNullOrEmpty(search.String1))
             {
-                sql += "AND LOWER(TenDV) LIKE LOWER('%" + search.String1 + "%') ";
+                sql += "AND LOWER(TenDV) LIKE LOWER(N'%" + search.String1 + "%') ";
             }
             if (search.Int1 > 0 && search.Int2 > 0)
             {
@@ -62,7 +62,7 @@ namespace QLKhachSan
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

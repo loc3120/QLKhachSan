@@ -51,7 +51,7 @@ namespace QLKhachSan
         private void btnReturn_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = LAPCUATUNG; database = QLKhachSan; integrated security = True";
+            conn.ConnectionString = "data source = localhost; database = QLKhachSan; integrated security = True";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 

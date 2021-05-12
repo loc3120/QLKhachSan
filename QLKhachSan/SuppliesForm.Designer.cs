@@ -44,22 +44,22 @@ namespace QLKhachSan
             this.suppliesDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.suppliesDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.suppliesDgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.suppliesDgv.Location = new System.Drawing.Point(0, 113);
-            this.suppliesDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.suppliesDgv.Location = new System.Drawing.Point(0, 140);
+            this.suppliesDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.suppliesDgv.Name = "suppliesDgv";
             this.suppliesDgv.RowHeadersWidth = 51;
             this.suppliesDgv.RowTemplate.Height = 24;
-            this.suppliesDgv.Size = new System.Drawing.Size(870, 392);
+            this.suppliesDgv.Size = new System.Drawing.Size(1160, 482);
             this.suppliesDgv.TabIndex = 19;
             this.suppliesDgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.suppliesDgv_CellDoubleClick);
             // 
             // txbSearch
             // 
-            this.txbSearch.Location = new System.Drawing.Point(182, 28);
-            this.txbSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txbSearch.Location = new System.Drawing.Point(243, 34);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbSearch.Multiline = true;
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(209, 32);
+            this.txbSearch.Size = new System.Drawing.Size(277, 38);
             this.txbSearch.TabIndex = 18;
             // 
             // btnExit
@@ -67,21 +67,22 @@ namespace QLKhachSan
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(763, 28);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(1017, 34);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(97, 32);
+            this.btnExit.Size = new System.Drawing.Size(129, 39);
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(413, 28);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(551, 34);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(97, 32);
+            this.btnSearch.Size = new System.Drawing.Size(129, 39);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -90,10 +91,10 @@ namespace QLKhachSan
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(662, 28);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(883, 34);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(68, 32);
+            this.btnDelete.Size = new System.Drawing.Size(91, 39);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -102,10 +103,10 @@ namespace QLKhachSan
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(557, 27);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(743, 33);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 33);
+            this.btnAdd.Size = new System.Drawing.Size(85, 41);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -119,17 +120,17 @@ namespace QLKhachSan
             "Mã vật dụng",
             "Tên vật dụng",
             "Mã phòng"});
-            this.cbSearch.Location = new System.Drawing.Point(11, 30);
-            this.cbSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSearch.Location = new System.Drawing.Point(15, 37);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(148, 28);
+            this.cbSearch.Size = new System.Drawing.Size(196, 34);
             this.cbSearch.TabIndex = 20;
             // 
             // SuppliesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 505);
+            this.ClientSize = new System.Drawing.Size(1160, 622);
             this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.suppliesDgv);
             this.Controls.Add(this.txbSearch);
@@ -137,7 +138,7 @@ namespace QLKhachSan
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SuppliesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuppliesForm";

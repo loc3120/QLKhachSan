@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,12 @@ namespace QLKhachSan
         {
             MessageBox.Show("Tên truy cập: admin\n" +
                "Mật khẩu: admin");
+        }
+
+        private void lilbAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Console.WriteLine(Application.StartupPath);
+            Process.Start(Application.StartupPath + "\\Huong_dan\\index.html");
         }
     }
 }

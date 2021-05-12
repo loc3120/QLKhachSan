@@ -72,6 +72,7 @@ namespace QLKhachSan
             this.lilbAbout.TabIndex = 13;
             this.lilbAbout.TabStop = true;
             this.lilbAbout.Text = "About";
+            this.lilbAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lilbAbout_LinkClicked);
             // 
             // lilbTaiKhoan
             // 

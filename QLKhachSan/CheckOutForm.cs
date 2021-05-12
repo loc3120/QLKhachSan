@@ -42,6 +42,7 @@ namespace QLKhachSan
         {
             new ThemHD().ShowDialog();
             reload();
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -619,6 +619,7 @@ go
 
 ----
  go
+
 create proc testedit @mahd nvarchar(20),@maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
 as
 begin
@@ -628,10 +629,10 @@ begin
 	set MaKH=@maKH, MaPhong=@maPhong
 
 	declare @tmpvd nvarchar(50)
-	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung)
+	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung AND MaPhong = @maPhong)
 
 	declare @vd int
-	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung)
+	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung AND MaPhong = @maPhong)
 	update HOADON_VATDUNG
 	set SoLuong=@slvd
 	where MaHD = @mahd
@@ -666,6 +667,7 @@ begin
 	if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+
 exec testedit 'HD1029','KH0004','PH0003',N'Ăn trưa',N'Xới cơm',40,30
 
 go

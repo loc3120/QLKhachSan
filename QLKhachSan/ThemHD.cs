@@ -118,6 +118,7 @@ namespace QLKhachSan
             {
                 db.SelectData(sqladd);
                 MessageBox.Show("Thêm mới thành công");
+                
             }
             else
             {
@@ -126,7 +127,7 @@ namespace QLKhachSan
                 db.SelectData(sqledit);
                 MessageBox.Show("Cập nhật thành công");
             }
-
+            this.Close();
 
         }
 
