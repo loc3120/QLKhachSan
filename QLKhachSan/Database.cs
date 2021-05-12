@@ -11,7 +11,7 @@ namespace QLKhachSan
 {
     public class Database
     {
-        private string connectionString = "Data Source=DESKTOP-P5SQIP5;Initial Catalog=QLKhachSan;Trusted_Connection=Yes;";
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QLKhachSan;Trusted_Connection=Yes;";
         private SqlConnection conn;
 
         //private string sql;

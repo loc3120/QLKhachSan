@@ -1,7 +1,7 @@
 ﻿
 namespace QLKhachSan
 {
-    partial class ServiecsForm
+    partial class ServicesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,15 @@ namespace QLKhachSan
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.servicesDgv = new System.Windows.Forms.DataGridView();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudGiaMin = new System.Windows.Forms.NumericUpDown();
+            this.nudGiaMax = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaMax)).BeginInit();
             this.SuspendLayout();
             // 
             // txbSearch
@@ -52,79 +56,117 @@ namespace QLKhachSan
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1021, 42);
+            this.btnExit.Location = new System.Drawing.Point(1008, 147);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(129, 39);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(555, 41);
+            this.btnSearch.Location = new System.Drawing.Point(1008, 42);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(129, 39);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(887, 42);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 39);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(747, 40);
+            this.btnAdd.Location = new System.Drawing.Point(881, 147);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 41);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // servicesDgv
             // 
             this.servicesDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.servicesDgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.servicesDgv.Location = new System.Drawing.Point(0, 118);
+            this.servicesDgv.Location = new System.Drawing.Point(0, 212);
             this.servicesDgv.Name = "servicesDgv";
             this.servicesDgv.RowHeadersWidth = 51;
             this.servicesDgv.RowTemplate.Height = 24;
-            this.servicesDgv.Size = new System.Drawing.Size(1172, 443);
+            this.servicesDgv.Size = new System.Drawing.Size(1172, 427);
             this.servicesDgv.TabIndex = 13;
+            this.servicesDgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDgv_CellDoubleClick);
             // 
-            // cbSearch
+            // label1
             // 
-            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(12, 43);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(121, 34);
-            this.cbSearch.TabIndex = 14;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Tên dịch vụ";
             // 
-            // ServiecsForm
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(556, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Giá sử dụng";
+            // 
+            // nudGiaMin
+            // 
+            this.nudGiaMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudGiaMin.Location = new System.Drawing.Point(690, 43);
+            this.nudGiaMin.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudGiaMin.Name = "nudGiaMin";
+            this.nudGiaMin.Size = new System.Drawing.Size(137, 30);
+            this.nudGiaMin.TabIndex = 16;
+            this.nudGiaMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // nudGiaMax
+            // 
+            this.nudGiaMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudGiaMax.Location = new System.Drawing.Point(830, 43);
+            this.nudGiaMax.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudGiaMax.Name = "nudGiaMax";
+            this.nudGiaMax.Size = new System.Drawing.Size(137, 30);
+            this.nudGiaMax.TabIndex = 17;
+            this.nudGiaMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // ServicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 561);
-            this.Controls.Add(this.cbSearch);
+            this.ClientSize = new System.Drawing.Size(1172, 639);
+            this.Controls.Add(this.nudGiaMax);
+            this.Controls.Add(this.nudGiaMin);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.servicesDgv);
             this.Controls.Add(this.txbSearch);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Name = "ServiecsForm";
+            this.Name = "ServicesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiecsForm";
+            this.Load += new System.EventHandler(this.ServicesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.servicesDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,9 +177,11 @@ namespace QLKhachSan
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView servicesDgv;
-        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown nudGiaMin;
+        private System.Windows.Forms.NumericUpDown nudGiaMax;
     }
 }

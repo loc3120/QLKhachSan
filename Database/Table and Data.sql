@@ -426,6 +426,7 @@ begin
 	if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+go
 -----------------------------------
 create proc selectMaKHforRent
 as
@@ -483,3 +484,42 @@ begin
 	from THUE
 	where MaPhong = @MaPH
 end
+go
+
+--Hiếu thêm--
+create sequence DVSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+
+create proc InsertDV @tenDV nvarchar(50), @gia int as
+begin
+	insert into DICHVU(MaDV , TenDV, GiaSuDung)
+	values('DV' + cast(next value for DVSeq as char(6)),@tenDV,@gia);
+
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+go
+
+create proc UpdateDV @maDV char(6),@tenDV nvarchar(50), @gia int as
+begin
+	update DICHVU
+	set 
+	TenDV = @tenDV,
+	GiaSuDung = @gia
+	where MaDV = @maDV
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+go
+
+create trigger UpdateHDNV on DICHVU for update as
+begin
+	declare @giaDV int, @maDV char(6)
+	select @maDV = MaDV, @giaDV = GiaSuDung from inserted
+	update HOADON_DICHVU
+	set TongTienSuDungDichVu = SoLanSuDungDichVu * @giaDV
+	where MaDV = @maDV
+end
+go
