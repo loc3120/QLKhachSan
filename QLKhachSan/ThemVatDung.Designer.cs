@@ -107,6 +107,7 @@ namespace QLKhachSan
             this.cbbMaPhong.Name = "cbbMaPhong";
             this.cbbMaPhong.Size = new System.Drawing.Size(235, 28);
             this.cbbMaPhong.TabIndex = 8;
+            this.cbbMaPhong.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhong_SelectedIndexChanged);
             // 
             // txtGiaTien
             // 

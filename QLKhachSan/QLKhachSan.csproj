@@ -115,6 +115,12 @@
     <Compile Include="SearchGuest.Designer.cs">
       <DependentUpon>SearchGuest.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchHD.Designer.cs">
+      <DependentUpon>SearchHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServicesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     </Compile>
     <Compile Include="ThemDichVu.Designer.cs">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHD.Designer.cs">
+      <DependentUpon>ThemHD.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemVatDung.cs">
       <SubType>Form</SubType>
@@ -202,6 +214,9 @@
     <EmbeddedResource Include="SearchGuest.resx">
       <DependentUpon>SearchGuest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchHD.resx">
+      <DependentUpon>SearchHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServicesForm.resx">
       <DependentUpon>ServicesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDichVu.resx">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHD.resx">
+      <DependentUpon>ThemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemVatDung.resx">
       <DependentUpon>ThemVatDung.cs</DependentUpon>

@@ -123,5 +123,10 @@ namespace QLKhachSan
                 e.Handled = true;
             }
         }
+
+        private void cbbMaPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

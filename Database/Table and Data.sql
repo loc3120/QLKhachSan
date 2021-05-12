@@ -335,6 +335,7 @@ begin
 	where MaKH = @maKH
 end
 ----------------------------
+go
 create proc SelectKHByName @tenKH nvarchar(50)
 as
 begin
@@ -342,6 +343,7 @@ begin
 	where HoTen = @tenKH
 end
 ----------------------------
+go
 create proc SelectAllKHACHHANG
 as
 begin
@@ -523,3 +525,163 @@ begin
 	where MaDV = @maDV
 end
 go
+
+
+------------------tung---------------------
+create function tienKH_phong (@makh char(6),@maphong nvarchar(50)) 
+returns int
+as
+begin
+	declare @tien int
+	set @tien = (select p.GiaThue1Ngay from PHONG p where p.MaPhong=@maphong) * (SELECT  DATEDIFF(day, (select NgayDen from THUE where MaKH=@makh and MaPhong=@maphong), (select NgayDi from THUE where MaKH=@makh and MaPhong=@maphong)))
+	return @tien
+end
+go
+
+select dbo.tienKH_phong ('KH0002','PH0001')
+
+go
+
+alter function tien (@makh char(6),@maphong nvarchar(50),@mahd nvarchar(10)) 
+returns int
+as
+begin
+	declare @tien int
+	set @tien = (select dbo.tienKH_phong (@makh,@maphong)) +  (select TongTienSuDungDichVu from HOADON_DICHVU where MaHD=@mahd) + (select distinct hd.TongTienSuDungVatDung from HOADON_VATDUNG hd, VATDUNG vd where MaHD=@mahd and vd.MaPhong=@maphong)
+	--(select dbo.tienKH_phong (@makh,@maphong)) +
+	return @tien
+end
+go
+ (select dbo.tien ('KH0003','PH0003','HD1025'))
+
+select dbo.tien ('KH0002','PH0001','HD1027')
+
+go
+
+create sequence HDsequ
+	start with 4000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+
+
+
+
+ go
+ 
+alter proc test @maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
+as
+begin
+
+	declare @temp nvarchar(50)
+	set @temp = 'HD' + cast(next value for HDsequ as char(6))
+
+	insert into HOADON
+	values(@temp,0,@maKH,@maPhong);
+
+	declare @tmpvd nvarchar(50)
+	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung)
+
+	insert into HOADON_VATDUNG(MaHD, MaVatDung, SoLuong)
+	values (@temp,@tmpvd,@slvd)
+	declare @vd int
+	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung)
+	update HOADON_VATDUNG
+	set TongTienSuDungVatDung=SoLuong*@vd
+	where MaHD = @temp
+
+
+	declare @tmpdv nvarchar(50)
+	set @tmpdv = (select distinct MaDV from DICHVU where TenDV=@madv)
+
+	insert into HOADON_DICHVU(MaHD, MaDV, SoLanSuDungDichVu)
+	values (@temp,@tmpdv,@sldv)
+	declare @dv int
+	set @dv = (select distinct GiaSuDung from DICHVU where TenDV=@madv)
+	update HOADON_DICHVU
+	set TongTienSuDungDichVu=SoLanSuDungDichVu*@dv
+	where MaHD = @temp
+
+
+	update HOADON
+	set TongTien = (select dbo.tien (@maKH,@maPhong,@temp)) where MaHD=@temp
+
+	print @dv
+	print @temp
+
+
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+exec test 'KH0003','PH0003',N'Đưa đón',N'Cô ca',3,3
+
+ (select dbo.tien ('KH0003','PH0003','HD1025'))
+
+SELECT hdvd.SoLuong FROM vatdung vd, hoadon_vatdung hdvd  where hdvd.mavatdung=vd.mavatdung and hdvd.mahd='HD1028' and vd.maphong = 'PH0002'
+
+go
+
+-----
+
+----
+ go
+alter proc testedit @mahd nvarchar(20),@maKH nvarchar(50), @maPhong nvarchar(50), @madv  nvarchar(50), @mavatdung  nvarchar(50), @slvd int , @sldv int
+as
+begin
+
+
+	update  HOADON
+	set MaKH=@maKH, MaPhong=@maPhong
+
+	declare @tmpvd nvarchar(50)
+	set @tmpvd = (select distinct MaVatDung from VATDUNG where TenVatDung=@mavatdung)
+
+	declare @vd int
+	set @vd = (select distinct GiaTienSuDung from VATDUNG where TenVatDung=@mavatdung)
+	update HOADON_VATDUNG
+	set SoLuong=@slvd
+	where MaHD = @mahd
+
+	update HOADON_VATDUNG
+	set TongTienSuDungVatDung=SoLuong*@vd
+	where MaHD = @mahd
+
+
+	declare @tmpdv nvarchar(50)
+	set @tmpdv = (select distinct MaDV from DICHVU where TenDV=@madv)
+
+
+	declare @dv int
+	set @dv = (select distinct GiaSuDung from DICHVU where TenDV=@madv)
+
+	update HOADON_DICHVU
+	set SoLanSuDungDichVu=@sldv
+	where MaHD = @mahd
+
+	update HOADON_DICHVU
+	set TongTienSuDungDichVu=SoLanSuDungDichVu*@dv
+	where MaHD = @mahd
+
+
+	update HOADON
+	set TongTien = (select dbo.tien (@maKH,@maPhong,@mahd)) where MaHD=@mahd 
+
+	print @dv
+
+
+	if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+exec testedit 'HD1029','KH0004','PH0003',N'Ăn trưa',N'Xới cơm',40,30
+
+go
+
+create procedure searchHD @key nvarchar(100)
+as 
+begin
+	select MaHD, TongTien, MaKH, MaPhong
+	from HOADON 
+	where MaHD like '%'+@key+'%' or MaKH like '%'+@key+'%' or MaPhong like '%'+@key+'%'
+end
+
+exec searchHD 'H'
