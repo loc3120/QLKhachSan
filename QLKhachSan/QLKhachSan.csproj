@@ -266,5 +266,37 @@
   <ItemGroup>
     <None Include="Resources\debit-card.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="HDSD\addDichVu.jpg" />
+    <Content Include="HDSD\addHoaDin.jpg" />
+    <Content Include="HDSD\addKhachHang.jpg" />
+    <Content Include="HDSD\addPhong.jpg" />
+    <Content Include="HDSD\addThuePhong.jpg" />
+    <Content Include="HDSD\addVatDung.jpg" />
+    <Content Include="HDSD\formLogin.jpg" />
+    <Content Include="HDSD\formMain.jpg" />
+    <Content Include="HDSD\index.html" />
+    <Content Include="HDSD\KhongTimThayPhongTra.png" />
+    <Content Include="HDSD\QlDichVuForm.jpg" />
+    <Content Include="HDSD\qlHoaDon.jpg" />
+    <Content Include="HDSD\QlkhachHang.jpg" />
+    <Content Include="HDSD\QlThuePhong.jpg" />
+    <Content Include="HDSD\QlThuePhongTaiLaiSauKhiTraPhong.jpg" />
+    <Content Include="HDSD\QLVatDungForm.jpg" />
+    <Content Include="HDSD\QuanLyPhong.jpg" />
+    <Content Include="HDSD\searchHoaDonOut.jpg" />
+    <Content Include="HDSD\searchKhachHang.jpg" />
+    <Content Include="HDSD\searchKhachHangDaDatOrTraPhong.jpg" />
+    <Content Include="HDSD\searchKhachHangOut.jpg" />
+    <Content Include="HDSD\searchQlThuePhong.jpg" />
+    <Content Include="HDSD\searchqlVatDung.jpg" />
+    <Content Include="HDSD\searchQlVatDungOut.jpg" />
+    <Content Include="HDSD\searchquanlyDichVuOut.jpg" />
+    <Content Include="HDSD\searchRoomForm.jpg" />
+    <Content Include="HDSD\searchRoomFormOut.jpg" />
+    <Content Include="HDSD\style.css" />
+    <Content Include="HDSD\traPhongBtn.jpg" />
+    <Content Include="HDSD\traPhongQLThuePhong.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

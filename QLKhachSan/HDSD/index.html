@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khách sạn</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Quản lý khách sạn</h1>
+    <div class="content">
+        <div class="formLogin">
+            <h2>1. Sau khi mở ứng dụng sẽ hiện ra màn hình đăng nhập. Bạn cần có tài khoản để truy cập vào phần mềm quản lý khách sạn</h2>
+            <div class="formLogin-img">
+                <img src="./formLogin.jpg" alt="Form Login">
+            </div>
+        </div>
+
+        <div class="formMain">
+            <h2>2. Sau khi đăng nhập thành công sẽ hiện ra màn hình quản lý khách sạn gồm có 6 chức năng chính:</h2>
+            <ul>
+                <li>Quản lý phòng</li>
+                <li>Quản lý vật dụng</li>
+                <li>Quản lý khách hàng</li>
+                <li>Quản lý thuê phòng</li>
+                <li>Quản lý dịch vụ</li>
+                <li>Quản lý thanh toán</li>
+            </ul>
+            <img class="formMain-img" src="./formMain.jpg" alt="Màn hình chính">
+        </div>
+
+        <div class="QL__Phong" id="RoomForm">
+            <h2>3. Chức năng của quản lý phòng</h2>
+            <img src="./QuanLyPhong.jpg" alt="Quản lý phòng" class="formThemNV-img">
+            <p>Khi click vào nút Thêm, chương trình sẽ hiện ra màn hình gồm các thông tin của phòng, người dùng nhập thông tin phòng muốn thêm sau đó click vào Lưu để hoàn tất việc thêm phòng</p>
+            <img src="./addPhong.jpg" alt="Thêm phòng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm phòng theo:</p>
+            <ul>
+                <li>Mã phòng</li>
+                <li>Tên phòng</li>
+                <li>Loại Phòng</li>
+                <li>Giá thuê 1 ngày</li>
+            </ul>
+            <img src="./searchRoomForm.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+            <p>Ví dụ:  Đầu ra khi tìm kiếm theo tên phòng</p>
+            <img src="./searchRoomFormOut.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+
+        <div class="QL__VatDung" id="SuppliesForm">
+            <h2>4. Chức năng của quản lý vật dụng</h2>
+            <img src="./QLVatDungForm.jpg" alt="Quản lý vật dụng" class="formThemNV-img">
+            <p>Khi click vào nút Thêm, chương trình sẽ hiện ra màn hình gồm các thông tin của vật dụng, người dùng nhập thông tin vật dụng muốn thêm sau đó click vào Lưu để hoàn tất việc thêm vật dụng</p>
+            <img src="./addVatDung.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm vật dụng theo:</p>
+            <ul>
+                <li>Mã vật dụng</li>
+                <li>Tên vật dụng</li>
+                <li>Mã phòng</li>
+            </ul>
+            <img src="./searchqlVatDung.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+            <p>Ví dụ:  Đầu ra khi tìm kiếm theo tên phòng</p>
+            <img src="./searchQlVatDungOut.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+        <div class="QL__KhachHang" id="GuestForm">
+            <h2>5. Chức năng của quản lý khách hàng</h2>
+            <img src="./QlkhachHang.jpg" alt="Quản lý vật dụng" class="formThemNV-img">
+            <p>Khi click vào nút Thêm, chương trình sẽ hiện ra màn hình gồm các thông tin của khách hàng, người dùng nhập thông tin khách hàng muốn thêm sau đó click vào Lưu để hoàn tất việc thêm khách hàng</p>
+            <img src="./addKhachHang.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm khách hàng theo:</p>
+            <ul>
+                <li>Mã khách</li>
+                <li>Tên khách</li>
+            </ul>
+            <img src="./searchKhachHang.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+            <p>Ví dụ:  Đầu ra khi tìm kiếm theo mã khách hàng</p>
+            <img src="./searchKhachHangOut.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+
+        <div class="QL__KhachHang" id="RentingForm">
+            <h2>6. Chức năng của quản lý thuê và trả phòng</h2>
+            <img src="./QlThuePhong.jpg" alt="Quản lý vật dụng" class="formThemNV-img">
+            <p>Khi click vào nút thuê phòng, chương trình sẽ hiện ra màn hình gồm các thông tin của max khách hàng, mã phòng và ngày thuê , người dùng nhập thông tin muốn thêm sau đó click vào Lưu để hoàn tất việc thêm thuê phòng</p>
+            <img src="./addThuePhong.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Khi bạn muốn trả phòng click vào nút trả phòng, chương trình sẽ hiện ra màn hình và ta tìm kiếm theo mã phòng để xem có ai thuê ở phòng đó không, nếu tìm thấy sẽ ra thông tin và double click vào thông tin tìm ra đó và nhập ngày đi của khách hàng và ấn trả phòng để hoàn tất việc trả phòng</p>
+            <img src="./traPhongBtn.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Nếu trả phòng thành công sẽ thông báo : </p>
+            <img src="./traPhongQLThuePhong.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Còn nếu không tìm thấy phòng nào phù hợp sẽ trống bên phải </p>
+            <img src="./KhongTimThayPhongTra.png" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm theo:</p>
+            <ul>
+                <li>Mã phòng</li>
+                <li>Mã khách hàng</li>
+            </ul>
+            <img src="./searchQlThuePhong.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+            <p>Ví dụ:  Đầu ra khi tìm kiếm theo mã khách hàng</p>
+            <img src="./searchKhachHangDaDatOrTraPhong.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+
+
+        <div class="QL__DichVu" id="ServicesForm">
+            <h2>7. Chức năng của quản lý dịch vụ</h2>
+            <img src="./QlDichVuForm.jpg" alt="Quản lý vật dụng" class="formThemNV-img">
+            <p>Khi click vào nút Thêm, chương trình sẽ hiện ra màn hình gồm các thông tin của dịch vụ, người dùng nhập thông tin dịch vụ muốn thêm sau đó click vào thêm để hoàn tất việc thêm dịch vụ hoặc hủy nếu không muốn</p>
+            <img src="./addDichVu.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm dịch vụ theo tiêu chí:</p>
+            <ul>
+                <li>Tên dịch vụ, giá sử dụng từ bao nhiêu đến bao nhiêu</li>
+            </ul>
+            <p>Ví dụ:  Đầu ra khi tìm kiếm</p>
+            <img src="./searchquanlyDichVuOut.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+
+        <div class="QL__HoaDon" id="CheckOutForm">
+            <h2>8. Chức năng của quản lý hóa đơn</h2>
+            <img src="./qlHoaDon.jpg" alt="Quản lý vật dụng" class="formThemNV-img">
+            <p>Khi click vào nút Thêm, chương trình sẽ hiện ra màn hình gồm các thông tin của hóa đơn, người dùng nhập thông tin hóa muốn thêm sau đó click vào lưu để hoàn tất việc thêm hóa đơn</p>
+            <img src="./addHoaDin.jpg" alt="Thêm vật dụng" class="formThemNV-img">
+            <p>Chương trình cung cấp tìm kiếm hóa đơn theo một trong các tiêu chí tương đối: mã hóa đơn hoặc mã khách hàng hoặc mã phòng</p>
+            <p>Ví dụ:  Đầu ra khi tìm kiếm</p>
+            <img src="./searchHoaDonOut.jpg" alt="Thêm hàng hóa" class="formThemNV-img">
+
+        </div>
+
+    <h1>Chúc các bạn thành công</h1>
+</body>
+</html>

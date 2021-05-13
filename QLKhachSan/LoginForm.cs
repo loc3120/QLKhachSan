@@ -39,8 +39,8 @@ namespace QLKhachSan
 
         private void lilbAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Console.WriteLine(Application.StartupPath);
-            Process.Start(Application.StartupPath + "\\Huong_dan\\index.html");
+            //Process.Start(Application.StartupPath + "\\Huong_dan\\index.html");
+            Process.Start(Application.StartupPath.Replace("\\bin\\Debug", "\\HDSD\\index.html"));
         }
     }
 }
